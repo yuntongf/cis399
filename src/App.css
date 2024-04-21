@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +37,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+.circle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33vw);
+  grid-template-rows: repeat(3, 33.33vh);
+  justify-content: center;
+}
+
+.circle {
+  z-index: 1;
+  width: 25px; /* Adjust circle size */
+  height: 40px; /* Adjust circle size */
+  border-radius: 50%;
+  margin: auto;
+  background-color: #3498db;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
 }
