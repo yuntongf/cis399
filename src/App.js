@@ -3,7 +3,7 @@ import "./App.css";
 import video from "./cow.mp4";
 import webgazer from "webgazer";
 import { useEffect, useState } from "react";
-const fs = require("fs");
+// const fs = require("fs");
 
 function App() {
   const [showGrid, setShowGrid] = useState(false);
@@ -22,9 +22,9 @@ function App() {
         const y = data.y; // these y coordinates are relative to the viewport
 
         // write coordinates to CSV file
-        fs.appendFileSync("coordinates.csv", `${x},${y}\n`, function (err) {
-          if (err) throw err;
-        });
+        // fs.appendFileSync("coordinates.csv", `${x},${y}\n`, function (err) {
+        //   if (err) throw err;
+        // });
 
         console.log(x, y);
       })
