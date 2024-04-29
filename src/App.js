@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import video from "./cow.mp4";
 import webgazer from "webgazer";
 import { useEffect, useState } from "react";
+import Video from "./pages/video";
 // const fs = require("fs");
 
 function App() {
   const [showGrid, setShowGrid] = useState(false);
-  const [calibrationDone, setCalibration] = useState(false);
+  const [calibrationDone, setCalibration] = useState(true);
   const [clickCounts, setClickCounts] = useState(Array(9).fill(0));
   // const fs = require("fs");
 
@@ -79,20 +79,11 @@ function App() {
       <header className="App-header">
         <div className="App">
           {calibrationDone && (
-            <video
-              width="100%"
-              height="100%"
-              objectFit="cover"
-              autoPlay
-              controls
-            >
-              <source src={video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <Video />
           )}
           <br />
           {!showGrid && (
-            <button onClick={() => handleSubmit()}>Start Calibration.</button>
+            <button onClick={() => handleSubmit()}>Start Calibration</button>
           )}
           {showGrid && <div className="circle-grid">{renderCircleGrid()}</div>}
         </div>
